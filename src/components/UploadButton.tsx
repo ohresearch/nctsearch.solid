@@ -14,7 +14,6 @@ export default function (props: any) {
 				startIcon={props.startIcon || <UploadIcon />}
 				onClick={() => {
 					refFile?.click()
-					props?.onClick()
 				}}
 			>
 				{props.children || "Upload"}
