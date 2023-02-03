@@ -1,0 +1,49 @@
+{
+	"name": "oportal",
+	"version": "0.0.0",
+	"description": "",
+	"engines": {
+		"node": ">=18.0",
+		"npm": ">=8.6"
+	},
+	"scripts": {
+		"start": "vite",
+		"dev": "vite",
+		"build": "vite build",
+		"serve": "vite preview"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^4.7.4",
+		"vite": "^3.2.5",
+		"vite-plugin-solid": "^2.3.0"
+	},
+	"dependencies": {
+		"@solidjs/router": "^0.4.2",
+		"@suid/icons-material": "^0.2.6",
+		"@suid/material": "^0.5.0",
+		"@types/meyda": "^4.3.3",
+		"apexcharts": "^3.36.3",
+		"bulma": "^0.9.4",
+		"chart.js": "^4.0.1",
+		"chartist": "^1.1.2",
+		"chartjs-adapter-date-fns": "^2.0.1",
+		"date-fns": "^2.29.3",
+		"dayjs": "^1.11.6",
+		"export-to-csv": "^0.2.1",
+		"firebase": "^9.13.0",
+		"flatbuffers": "^23.1.21",
+		"gridjs": "^5.1.0",
+		"jquery": "^3.6.1",
+		"meyda": "^5.5.1",
+		"moment": "^2.29.4",
+		"p5": "^1.5.0",
+		"solid-apexcharts": "^0.1.6",
+		"solid-js": "^1.4.7",
+		"solid-qr-code": "^0.0.8",
+		"swiper": "^8.4.5",
+		"tui-grid": "^4.21.7",
+		"wavesurfer.js": "^6.4.0",
+		"webgl-plot": "^0.7.0"
+	}
+}
