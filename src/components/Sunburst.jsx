@@ -1,16 +1,17 @@
+import LinearProgress from "@suid/material/LinearProgress"
 import { createEffect, Show, createSignal } from "solid-js"
-import DeleteIcon from "@suid/icons-material/DeleteOutlineRounded"
-import IconButton from "@suid/material/IconButton"
+
 let ref
 
 export default function (props) {
 
-	const [showing, setShowing] = createSignal()
 
 	createEffect(() => {
 		try {
+			ref.innerHTML = ""
 			const data = props.json
 			if (!data) return
+
 
 			const width = 1200
 			const radius = width / 6
@@ -39,7 +40,6 @@ export default function (props) {
 
 			const root = partition(data)
 			console.log({ root })
-			setShowing(true)
 
 			root.each((d) => (d.current = d))
 
@@ -117,6 +117,7 @@ export default function (props) {
 				.attr("fill", "none")
 				.attr("pointer-events", "all")
 				.on("click", clicked)
+
 
 			// d3.select("body")
 			//     .selectAll("div")
@@ -219,18 +220,8 @@ export default function (props) {
 
 
 	return <>
-		<Show when={showing()}>
-			<div align="end">
-				<IconButton aria-label="delete" onClick={() => {
-					ref.innerHTML = ""
-					setShowing(false)
-				}}>
-					<DeleteIcon />
-				</IconButton>
-			</div>
-		</Show>
-
-		<div id="sunburst" ref={ref} /></>
+		<div id="sunburst" ref={ref} />
+	</>
 
 }
 
