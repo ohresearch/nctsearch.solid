@@ -1,13 +1,17 @@
-import { createEffect } from "solid-js";
-import { json } from '../pages/HomePage';
-
-
+import { createEffect, Show, createSignal } from "solid-js"
+import DeleteIcon from "@suid/icons-material/DeleteOutlineRounded"
+import IconButton from "@suid/material/IconButton"
+let ref
 
 export default function (props) {
 
+	const [showing, setShowing] = createSignal()
+
 	createEffect(() => {
 		try {
-			const data = json()
+			const data = props.json
+			if (!data) return
+
 			const width = 1200
 			const radius = width / 6
 			console.log({ data })
@@ -35,6 +39,7 @@ export default function (props) {
 
 			const root = partition(data)
 			console.log({ root })
+			setShowing(true)
 
 			root.each((d) => (d.current = d))
 
@@ -208,13 +213,24 @@ export default function (props) {
 			}
 		} catch (error) {
 			console.log(error)
-
 		}
 	})
 
 
 
-	return <div id="sunburst" />
+	return <>
+		<Show when={showing()}>
+			<div align="end">
+				<IconButton aria-label="delete" onClick={() => {
+					ref.innerHTML = ""
+					setShowing(false)
+				}}>
+					<DeleteIcon />
+				</IconButton>
+			</div>
+		</Show>
+
+		<div id="sunburst" ref={ref} /></>
 
 }
 

@@ -1,13 +1,16 @@
-import { createEffect } from "solid-js";
-import { json } from '../pages/HomePage';
-
-
+import { createEffect, Show, createSignal } from "solid-js"
+import DeleteIcon from "@suid/icons-material/DeleteOutlineRounded"
+import IconButton from "@suid/material/IconButton"
+let ref
 
 export default function (props) {
 
+	const [showing, setShowing] = createSignal()
+
 	createEffect(async () => {
 		try {
-			const data = json()
+			const data = props.json
+			if (!data) return
 
 			// Copyright 2021 Observable, Inc.
 			// Released under the ISC license.
@@ -139,6 +142,7 @@ export default function (props) {
 			})
 
 			console.log({ data })
+			setShowing(true)
 
 			// Create chart only with top 30 results
 			chart = BarChart(data.slice(0, 30), {
@@ -150,11 +154,26 @@ export default function (props) {
 				height: 1000,
 				color: "steelblue",
 			})
+
 		} catch (error) {
 			console.log(error)
 		}
 	})
-	return <div id="bar" />
+
+	return <>
+		<Show when={showing()}>
+			<div align="end">
+				<IconButton aria-label="delete" onClick={() => {
+					ref.innerHTML = ""
+					setShowing(false)
+				}}>
+					<DeleteIcon />
+				</IconButton>
+			</div>
+		</Show>
+
+		<div id="bar" ref={ref} />
+	</>
 
 }
 

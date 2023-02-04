@@ -16,7 +16,8 @@ const App: Component = () => {
 					<Route path="/:id?" component={HomePage} />
 				</Routes>
 			</div>
-			<Footer>Clinician ID {clinicianId}</Footer>
+			{/* <Footer>Clinician ID {clinicianId}</Footer> */}
+			<Footer />
 		</>
 	)
 }

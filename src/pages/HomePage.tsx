@@ -18,7 +18,6 @@ export default function HomePage(props: any) {
 		<>
 			<MainAppBar />
 			<Container>
-				NCT Analysis
 				<div>
 					<UploadButton
 						onChange={(event: any) => {
@@ -28,8 +27,8 @@ export default function HomePage(props: any) {
 						}}
 					/>
 				</div>
-				<Barchart />
-				<Sunburst />
+				<Barchart json={json()} />
+				<Sunburst json={json()} />
 			</Container>
 		</>
 	)

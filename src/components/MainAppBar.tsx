@@ -45,7 +45,7 @@ export default function (props: any) {
 								</IconButton>
 							</div>
 						</Show>
-
+						{/*
 						<div class="navbar-item">
 							<Button
 								component="label"
@@ -55,7 +55,7 @@ export default function (props: any) {
 							>
 								<ShowMobile fallback="Home" />
 							</Button>
-						</div>
+						</div> */}
 
 						<Show when={!isMobile()}>
 							<div
@@ -85,7 +85,7 @@ export default function (props: any) {
 							</div>
 						</Show>
 
-						<Show when={!path()?.includes("/data/")}>
+						{/* <Show when={!path()?.includes("/data/")}>
 							<div class="navbar-item">
 								<Button
 									component="label"
@@ -96,14 +96,14 @@ export default function (props: any) {
 									<ShowMobile fallback="Data" />
 								</Button>
 							</div>
-						</Show>
+						</Show> */}
 					</div>
 
-					<div class="navbar-item">
+					{/* <div class="navbar-item">
 						<IconButton component="label" color="inherit">
 							<MenuIcon />
 						</IconButton>
-					</div>
+					</div> */}
 				</nav>
 			</div>
 			<div style={{ height: "60px" }}></div>

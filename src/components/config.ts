@@ -1,5 +1,5 @@
 export default {
-	name: "Respirate",
+	name: "NCT Analysis",
 	colors: {
 		icon: "#fc0a7e",
 		// https://coolors.co/5d4938-855F44-b59c8c-b2cb95-ddc173-dc8644-d5452f
